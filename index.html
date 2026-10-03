@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>국외출장 일정표</title>
+<style>
+:root {
+  --bg:#f7f7f5;
+  --card:#ffffff;
+  --ink:#1a1a1a;
+  --muted:#737373;
+  --line:#e8e8e3;
+  --accent:#d43d3d;
+  --green:#e8f3ec;
+  --green-ink:#2d6a4f;
+  --red:#fbe9e9;
+  --red-ink:#a32626;
+  --shadow:0 7px 22px rgba(0,0,0,.055);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Segoe UI",sans-serif;
+}
+header{
+  background:#333333;
+  color:#fff;padding:26px 18px 23px;
+}
+header .inner,main,nav .inner{max-width:920px;margin:auto}
+h1{margin:0;font-size:30px;line-height:1.1;letter-spacing:-.04em}
+header p{margin:8px 0 0;font-size:14px;opacity:.9}
+nav{
+  position:sticky;top:0;z-index:5;
+  background:rgba(247,247,245,.93);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+nav .inner{display:flex;gap:8px;padding:9px 14px}
+nav a{
+  text-decoration:none;color:var(--ink);font-size:14px;font-weight:800;
+  background:#fff;border:1px solid var(--line);padding:7px 12px;border-radius:999px;
+}
+main{padding:18px 12px 48px}
+.day{margin-bottom:30px}
+.daytitle{
+  font-size:22px;font-weight:900;letter-spacing:-.03em;margin:0 0 10px 4px;
+}
+.schedule{
+  background:var(--card);border:1px solid var(--line);border-radius:18px;
+  box-shadow:var(--shadow);overflow:hidden;
+}
+.row{
+  display:grid;grid-template-columns:112px minmax(0,1fr) 38px;
+  align-items:center;gap:12px;padding:13px 14px;
+  border-bottom:1px solid var(--line);
+  min-height:68px;
+}
+.row:last-child{border-bottom:0}
+.time{
+  font-size:13px;font-weight:900;color:#7a7a7a;line-height:1.35;
+  white-space:normal;
+}
+.row.food .time{color:#2f6fb3;}
+.row.tour .time{color:#2f7d59;}
+.row.other .time{color:#7a7a7a;}
+.row.exhibit .time{color:#c63b3b;}
+.title{
+  font-size:16px;font-weight:900;line-height:1.25;letter-spacing:-.02em;
+}
+
+.desc{margin-top:3px;font-size:13px;color:var(--muted);line-height:1.4}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.tag{
+  display:inline-block;
+  margin-top:6px;
+  padding:4px 8px;
+  border-radius:999px;
+  background:#f1f1ee;
+  border:1px solid #dfdfda;
+  color:#555;
+  font-size:11px;
+  font-weight:800;
+  line-height:1.2;
+}
+.mapbtn{
+  width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+  background:#f3f3ef;border:1px solid #e4e4df;text-decoration:none;
+  transition:.15s ease;
+}
+.mapbtn:hover{background:#ecece6;transform:translateY(-1px)}
+.mapbtn svg,.choice i svg{width:18px;height:18px;fill:#343434}
+.mapspacer{width:34px}
+.dualmap{display:flex;gap:5px;justify-content:flex-end}
+.dualmap .mapbtn{width:30px;height:30px}
+.choicegrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin-top:9px}
+.choice{
+  position:relative;text-decoration:none;color:var(--ink);background:#faf9f5;
+  border:1px solid #ece9df;border-radius:12px;padding:10px 32px 9px 10px;min-height:72px;
+}
+.choice b{display:block;font-size:13px;margin-bottom:4px}
+.choice span{font-size:11px;color:var(--muted);line-height:1.3;display:block}
+.choice i{position:absolute;right:9px;top:9px;width:18px;height:18px}
+.choice i svg{width:16px;height:16px;fill:#777}
+@media(max-width:680px){
+  header{padding:22px 16px 19px}
+  h1{font-size:27px}
+  .daytitle{font-size:20px}
+  .row{grid-template-columns:86px minmax(0,1fr) 34px;gap:9px;padding:12px 11px;min-height:62px}
+  .time{font-size:12px}
+  .title{font-size:15px}
+  .desc{font-size:12px}
+  .mapbtn{width:32px;height:32px}
+  .choicegrid{grid-template-columns:1fr}
+  .choice{min-height:auto;padding:9px 32px 9px 10px}
+}
+
+
+
+.hotel-final .time{color:transparent;}
+.hotel-final .title{font-weight:900;}
+
+.transfer{
+  display:grid;
+  grid-template-columns:112px minmax(0,1fr) 38px;
+  gap:12px;
+  align-items:center;
+  min-height:30px;
+  padding:0 14px;
+  color:#858580;
+  font-size:11.5px;
+  line-height:1.2;
+}
+
+
+
+.transfer .move{
+  grid-column:2 / 4;
+  display:flex;
+  align-items:center;
+  gap:7px;
+  flex-wrap:wrap;
+  padding:5px 0;
+}
+.transfer .mode{
+  font-weight:900;
+  color:#5f5f5a;
+}
+.transfer .meta{
+  color:#8f8f89;
+}
+.transfer .sep{color:#c2c2bc}
+@media(max-width:680px){
+  .transfer{
+    grid-template-columns:86px minmax(0,1fr) 34px;
+    gap:9px;
+    padding:0 11px;
+    font-size:11px;
+  }
+}
+
+.transfer > div:first-child{width:100%;height:1px;}
+</style>
+</head>
+<body>
+<header>
+<div class="inner">
+<h1>국외출장 일정표</h1>
+<p>홍콩 · 2026.10.12–10.13<br/>선전 · 2026.10.14–10.16</p>
+</div>
+</header>
+<nav>
+<div class="inner">
+<a href="#day1">1일차</a>
+<a href="#day2">2일차</a>
+</div>
+</nav>
+<main>
+<section class="day" id="day1">
+<h2 class="daytitle">1일차 - 10/12(월)</h2>
+<div class="schedule">
+<div class="row other">
+<div class="time">08:05–10:55</div>
+<div class="content">
+<div class="title">인천공항 → 홍콩국제공항</div>
+<div class="desc">입국심사 · 수하물 수령</div>
+</div>
+<div class="mapspacer"></div>
+</div>
+<div class="row other">
+<div class="time">12:00 전후</div>
+<div class="content">
+<div class="title">A21 공항버스 → 침사추이</div>
+<div class="desc">Ground Transportation Centre 탑승 · 약 60~75분 · HK$34.6 · 현금은 거스름돈 없음</div>
+<div class="tags"><span class="tag">결제 · 트래블로그 / Octopus / 현금</span></div>
+</div>
+<div class="mapspacer"></div>
+</div>
+<div class="row other">
+<div class="time">13:10–13:30</div>
+<div class="content">
+<div class="title">The Salisbury - YMCA</div>
+<div class="desc">캐리어 보관</div>
+</div>
+<a aria-label="지도" class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=The%20Salisbury%20-%20YMCA%20of%20Hong%20Kong%2041%20Salisbury%20Rd%2C%20Tsim%20Sha%20Tsui%2C%20Hong%20Kong" target="_blank" title="지도"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M9 18 3.5 20.5A1 1 0 0 1 2 19.6V6.3a1 1 0 0 1 .6-.9L9 2l6 3 5.5-2.5A1 1 0 0 1 22 3.4v13.3a1 1 0 0 1-.6.9L15 21l-6-3Zm0-2.2 6 3V7.2l-6-3v11.6Zm8-8.9v11.2l3-1.4V5.6l-3 1.3ZM4 7v11.1l3-1.4V5.5L4 7Z"></path></svg></a>
+</div><div class="transfer"><div class=""></div><div class="move"><span class="mode">🚶 도보</span><span class="meta">약 5분</span></div></div>
+<div class="row food">
+<div class="time">13:30–14:20</div>
+<div class="content">
+<div class="title">Shek Kee Wonton Noodles</div>
+<div class="desc">승근픽 · 완탕면</div>
+<div class="tags"><span class="tag">결제 · 현금만</span></div>
+</div>
+<a aria-label="지도" class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=Shek%20Kee%20Wonton%20Noodles%20Shop%20B%2C%205%20Ichang%20St%2C%20Tsim%20Sha%20Tsui%2C%20Hong%20Kong" target="_blank" title="지도"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M9 18 3.5 20.5A1 1 0 0 1 2 19.6V6.3a1 1 0 0 1 .6-.9L9 2l6 3 5.5-2.5A1 1 0 0 1 22 3.4v13.3a1 1 0 0 1-.6.9L15 21l-6-3Zm0-2.2 6 3V7.2l-6-3v11.6Zm8-8.9v11.2l3-1.4V5.6l-3 1.3ZM4 7v11.1l3-1.4V5.5L4 7Z"></path></svg></a>
+</div><div class="transfer"><div class=""></div><div class="move"><span class="mode">🚶 도보</span><span class="meta">약 3~5분</span></div></div>
+<div class="row tour">
+<div class="time">14:20–14:50</div>
+<div class="content">
+<div class="title">Elegant Tang Dynasty</div>
+<div class="desc">기념품</div>
+</div>
+<a aria-label="지도" class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=Elegant%20Tang%20Dynasty%2027-33%20Nathan%20Rd%2C%20Tsim%20Sha%20Tsui%2C%20Hong%20Kong" target="_blank" title="지도"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M9 18 3.5 20.5A1 1 0 0 1 2 19.6V6.3a1 1 0 0 1 .6-.9L9 2l6 3 5.5-2.5A1 1 0 0 1 22 3.4v13.3a1 1 0 0 1-.6.9L15 21l-6-3Zm0-2.2 6 3V7.2l-6-3v11.6Zm8-8.9v11.2l3-1.4V5.6l-3 1.3ZM4 7v11.1l3-1.4V5.5L4 7Z"></path></svg></a>
+</div>
+<div class="row food">
+<div class="time">14:50–15:50</div>
+<div class="content">
+<div class="title">카페</div>
+<div class="desc">장소 추후 결정</div>
+</div>
+<div class="mapspacer"></div>
+</div><div class="transfer"><div class=""></div><div class="move"><span class="mode">🚶 도보</span><span class="meta">약 5~10분 · 자유시간 장소별 이동</span></div></div>
+<div class="row free tour">
+<div class="time">16:00–17:10</div>
+<div class="content">
+<div class="title">자유시간</div>
+<div class="choicegrid">
+<a class="choice" href="https://www.google.com/maps/search/?api=1&amp;query=Hong%20Kong%20Museum%20of%20Art%2010%20Salisbury%20Rd%2C%20Tsim%20Sha%20Tsui%2C%20Hong%20Kong" target="_blank"><b>미술관</b><span>Hong Kong Museum of Art</span><i><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M9 18 3.5 20.5A1 1 0 0 1 2 19.6V6.3a1 1 0 0 1 .6-.9L9 2l6 3 5.5-2.5A1 1 0 0 1 22 3.4v13.3a1 1 0 0 1-.6.9L15 21l-6-3Zm0-2.2 6 3V7.2l-6-3v11.6Zm8-8.9v11.2l3-1.4V5.6l-3 1.3ZM4 7v11.1l3-1.4V5.5L4 7Z"></path></svg></i></a>
+<a class="choice" href="https://www.google.com/maps/search/?api=1&amp;query=1881%20Heritage%202A%20Canton%20Rd%2C%20Tsim%20Sha%20Tsui%2C%20Hong%20Kong" target="_blank"><b>산책</b><span>1881 Heritage / Harbour City</span><i><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M9 18 3.5 20.5A1 1 0 0 1 2 19.6V6.3a1 1 0 0 1 .6-.9L9 2l6 3 5.5-2.5A1 1 0 0 1 22 3.4v13.3a1 1 0 0 1-.6.9L15 21l-6-3Zm0-2.2 6 3V7.2l-6-3v11.6Zm8-8.9v11.2l3-1.4V5.6l-3 1.3ZM4 7v11.1l3-1.4V5.5L4 7Z"></path></svg></i></a>
+<a class="choice" href="https://www.google.com/maps/search/?api=1&amp;query=The%20Salisbury%20-%20YMCA%20of%20Hong%20Kong%2041%20Salisbury%20Rd%2C%20Tsim%20Sha%20Tsui%2C%20Hong%20Kong" target="_blank"><b>숙소 휴식</b><span>The Salisbury - YMCA</span><i><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M9 18 3.5 20.5A1 1 0 0 1 2 19.6V6.3a1 1 0 0 1 .6-.9L9 2l6 3 5.5-2.5A1 1 0 0 1 22 3.4v13.3a1 1 0 0 1-.6.9L15 21l-6-3Zm0-2.2 6 3V7.2l-6-3v11.6Zm8-8.9v11.2l3-1.4V5.6l-3 1.3ZM4 7v11.1l3-1.4V5.5L4 7Z"></path></svg></i></a>
+</div>
+</div>
+<div class="mapspacer"></div>
+</div><div class="transfer"><div class=""></div><div class="move"><span class="mode">🚶 도보</span><span class="meta">약 5~10분 · Avenue of Stars로 집결</span></div></div>
+<div class="row tour">
+<div class="time">17:10–18:10</div>
+<div class="content">
+<div class="title">Avenue of Stars · 빅토리아 하버</div>
+<div class="desc">산책</div>
+</div>
+<a aria-label="지도" class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=Avenue%20of%20Stars%20Tsim%20Sha%20Tsui%2C%20Hong%20Kong" target="_blank" title="지도"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M9 18 3.5 20.5A1 1 0 0 1 2 19.6V6.3a1 1 0 0 1 .6-.9L9 2l6 3 5.5-2.5A1 1 0 0 1 22 3.4v13.3a1 1 0 0 1-.6.9L15 21l-6-3Zm0-2.2 6 3V7.2l-6-3v11.6Zm8-8.9v11.2l3-1.4V5.6l-3 1.3ZM4 7v11.1l3-1.4V5.5L4 7Z"></path></svg></a>
+</div><div class="transfer"><div class=""></div><div class="move"><span class="mode">🚶 도보</span><span class="meta">약 10~15분</span></div></div>
+<div class="row food">
+<div class="time">19:00</div>
+<div class="content">
+<div class="title">Little Fish · 카오위</div>
+<div class="tags"><span class="tag">예약 · OpenRice 완료</span><span class="tag">결제 · 트래블로그 / Octopus / 현금</span></div>
+</div>
+<a aria-label="지도" class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=Little%20Fish%201/F%2C%2016%20Cameron%20Rd%2C%20Tsim%20Sha%20Tsui%2C%20Hong%20Kong" target="_blank" title="지도"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M9 18 3.5 20.5A1 1 0 0 1 2 19.6V6.3a1 1 0 0 1 .6-.9L9 2l6 3 5.5-2.5A1 1 0 0 1 22 3.4v13.3a1 1 0 0 1-.6.9L15 21l-6-3Zm0-2.2 6 3V7.2l-6-3v11.6Zm8-8.9v11.2l3-1.4V5.6l-3 1.3ZM4 7v11.1l3-1.4V5.5L4 7Z"></path></svg></a>
+</div><div class="transfer"><div class=""></div><div class="move"><span class="mode">🚶 도보</span><span class="meta">약 10분</span></div></div>
+<div class="row food">
+<div class="time">21:00 전후</div>
+<div class="content">
+<div class="title">Kowloon Taproom</div>
+<div class="desc">홍콩 수제맥주</div>
+<div class="tags"><span class="tag">결제 · 트래블로그 / 현금</span></div></div>
+<a aria-label="지도" class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=Kowloon%20Taproom%2010-14%20Ashley%20Rd%2C%20Tsim%20Sha%20Tsui%2C%20Hong%20Kong" target="_blank" title="지도"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M9 18 3.5 20.5A1 1 0 0 1 2 19.6V6.3a1 1 0 0 1 .6-.9L9 2l6 3 5.5-2.5A1 1 0 0 1 22 3.4v13.3a1 1 0 0 1-.6.9L15 21l-6-3Zm0-2.2 6 3V7.2l-6-3v11.6Zm8-8.9v11.2l3-1.4V5.6l-3 1.3ZM4 7v11.1l3-1.4V5.5L4 7Z"></path></svg></a>
+</div>
+<div class="transfer final-transfer"><div class=""></div><div class="move"><span class="mode">🚶 도보</span><span class="meta">약 8~10분</span></div></div><div class="row other hotel-final">
+<div class="time"></div>
+<div class="content">
+<div class="title">The Salisbury - YMCA of Hong Kong</div>
+</div>
+<a aria-label="숙소까지 추천 경로" class="mapbtn" href="https://www.google.com/maps/dir/?api=1&amp;origin=Kowloon%20Taproom%2C%2010-14%20Ashley%20Road%2C%20Tsim%20Sha%20Tsui%2C%20Hong%20Kong&amp;destination=The%20Salisbury%20-%20YMCA%20of%20Hong%20Kong%2C%2041%20Salisbury%20Road%2C%20Tsim%20Sha%20Tsui%2C%20Hong%20Kong&amp;travelmode=walking" target="_blank" title="숙소까지 추천 경로"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M9 18 3.5 20.5A1 1 0 0 1 2 19.6V6.3a1 1 0 0 1 .6-.9L9 2l6 3 5.5-2.5A1 1 0 0 1 22 3.4v13.3a1 1 0 0 1-.6.9L15 21l-6-3Zm0-2.2 6 3V7.2l-6-3v11.6Zm8-8.9v11.2l3-1.4V5.6l-3 1.3ZM4 7v11.1l3-1.4V5.5L4 7Z"></path></svg></a>
+</div></div>
+</section>
+<section class="day" id="day2">
+<h2 class="daytitle">2일차 - 10/13(화)</h2>
+<div class="schedule">
+<div class="row food">
+<div class="time">07:45–08:35</div>
+<div class="content">
+<div class="title">차찬텡 아침</div>
+<div class="desc">밀크티 · 빵 / 장소 추후 결정</div>
+</div>
+<div class="mapspacer"></div>
+</div><div class="transfer"><div class=""></div><div class="move"><span class="mode">🚶 도보</span><span class="meta">약 5~10분 · Star Ferry Pier · 결제 Octopus / 카드(발권기) / 현금</span></div></div>
+<div class="row other">
+<div class="time">09:00 전후</div>
+<div class="content">
+<div class="title">Star Ferry · 침사추이 → 완차이</div>
+<div class="desc">침사추이 → 완차이 · 약 8분 · HK$5</div>
+<div class="tags"><span class="tag">결제 · Octopus / 카드(발권기) / 현금</span></div></div>
+<a aria-label="지도" class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=Tsim%20Sha%20Tsui%20Star%20Ferry%20Pier%20Hong%20Kong" target="_blank" title="지도"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M9 18 3.5 20.5A1 1 0 0 1 2 19.6V6.3a1 1 0 0 1 .6-.9L9 2l6 3 5.5-2.5A1 1 0 0 1 22 3.4v13.3a1 1 0 0 1-.6.9L15 21l-6-3Zm0-2.2 6 3V7.2l-6-3v11.6Zm8-8.9v11.2l3-1.4V5.6l-3 1.3ZM4 7v11.1l3-1.4V5.5L4 7Z"></path></svg></a>
+</div><div class="transfer"><div class=""></div><div class="move"><span class="mode">🚶 도보</span><span class="meta">약 5~7분 · HKCEC</span></div></div>
+<div class="row exhibit">
+<div class="time">10:00–12:00</div>
+<div class="content">
+<div class="title">HKTDC Hong Kong Electronics Fair</div>
+<div class="desc">입장권 소지하기</div>
+</div>
+<a aria-label="지도" class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=Hong%20Kong%20Convention%20and%20Exhibition%20Centre%201%20Expo%20Dr%2C%20Wan%20Chai%2C%20Hong%20Kong" target="_blank" title="지도"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M9 18 3.5 20.5A1 1 0 0 1 2 19.6V6.3a1 1 0 0 1 .6-.9L9 2l6 3 5.5-2.5A1 1 0 0 1 22 3.4v13.3a1 1 0 0 1-.6.9L15 21l-6-3Zm0-2.2 6 3V7.2l-6-3v11.6Zm8-8.9v11.2l3-1.4V5.6l-3 1.3ZM4 7v11.1l3-1.4V5.5L4 7Z"></path></svg></a>
+</div><div class="transfer"><div class=""></div><div class="move"><span class="mode">🚕 택시</span><span class="meta">약 5~10분 · HK$35~45/대 / 🚶 도보 약 20분 · 결제 현금 / 전자결제</span></div></div>
+<div class="row food">
+<div class="time">12:20–13:30</div>
+<div class="content">
+<div class="title">FAT J Char Siu</div>
+<div class="desc">차슈 + 거위구이 덮밥</div>
+<div class="tags"><span class="tag">결제 · 카드 (현금 불가)</span></div></div>
+<a aria-label="지도" class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=FAT%20J%20Char%20Siu%20Rialto%20Building%2C%20Landale%20St%2C%20Wan%20Chai%2C%20Hong%20Kong" target="_blank" title="지도"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M9 18 3.5 20.5A1 1 0 0 1 2 19.6V6.3a1 1 0 0 1 .6-.9L9 2l6 3 5.5-2.5A1 1 0 0 1 22 3.4v13.3a1 1 0 0 1-.6.9L15 21l-6-3Zm0-2.2 6 3V7.2l-6-3v11.6Zm8-8.9v11.2l3-1.4V5.6l-3 1.3ZM4 7v11.1l3-1.4V5.5L4 7Z"></path></svg></a>
+</div><div class="transfer"><div class=""></div><div class="move"><span class="mode">🚶 도보</span><span class="meta">약 7~10분</span></div></div>
+<div class="row food">
+<div class="time">13:50–14:10</div>
+<div class="content">
+<div class="title">Bakehouse Wan Chai</div>
+<div class="desc">에그타르트</div>
+<div class="tags"><span class="tag">결제 · 트래블로그 / Octopus / 현금</span></div></div>
+<a aria-label="지도" class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=Bakehouse%20Wan%20Chai%2014%20Tai%20Wong%20St%20E%2C%20Wan%20Chai%2C%20Hong%20Kong" target="_blank" title="지도"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M9 18 3.5 20.5A1 1 0 0 1 2 19.6V6.3a1 1 0 0 1 .6-.9L9 2l6 3 5.5-2.5A1 1 0 0 1 22 3.4v13.3a1 1 0 0 1-.6.9L15 21l-6-3Zm0-2.2 6 3V7.2l-6-3v11.6Zm8-8.9v11.2l3-1.4V5.6l-3 1.3ZM4 7v11.1l3-1.4V5.5L4 7Z"></path></svg></a>
+</div><div class="transfer"><div class=""></div><div class="move"><span class="mode">🚶 도보</span><span class="meta">약 3~5분 · 트램 정류장 · 결제 트래블로그 / Octopus / 현금</span></div></div>
+<div class="row other">
+<div class="time">14:30–15:00 전후</div>
+<div class="content">
+<div class="title">딩딩트램 · 완차이 → 센트럴</div>
+<div class="desc">뒤로 탑승 · 앞으로 하차 · 내릴 때 결제 · 약 20~25분 · HK$3.30</div>
+<div class="tags"><span class="tag">결제 · 트래블로그 / Octopus / 현금</span></div>
+</div>
+<div class="mapspacer"></div>
+</div>
+<div class="row tour">
+<div class="time">15:00–16:15</div>
+<div class="content">
+<div class="title">Central Market + 센트럴 골목 산책</div>
+</div>
+<a aria-label="Central Market부터 Tai Kwun까지 전체 도보 경로" class="mapbtn" href="https://www.google.com/maps/dir/?api=1&amp;origin=Central%20Market%2C%2093%20Queen%27s%20Road%20Central%2C%20Central%2C%20Hong%20Kong&amp;destination=Tai%20Kwun%2C%2010%20Hollywood%20Road%2C%20Central%2C%20Hong%20Kong&amp;travelmode=walking&amp;waypoints=Pottinger%20Street%2C%20Central%2C%20Hong%20Kong|Central-Mid-Levels%20Escalator%2C%20Central%2C%20Hong%20Kong" target="_blank" title="전체 도보 경로"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M9 18 3.5 20.5A1 1 0 0 1 2 19.6V6.3a1 1 0 0 1 .6-.9L9 2l6 3 5.5-2.5A1 1 0 0 1 22 3.4v13.3a1 1 0 0 1-.6.9L15 21l-6-3Zm0-2.2 6 3V7.2l-6-3v11.6Zm8-8.9v11.2l3-1.4V5.6l-3 1.3ZM4 7v11.1l3-1.4V5.5L4 7Z"></path></svg></a>
+</div><div class="transfer"><div class=""></div><div class="move"><span class="mode">🚶 도보</span><span class="meta">코스가 Tai Kwun 방향으로 이어짐</span></div></div>
+<div class="row tour">
+<div class="time">16:15–17:20</div>
+<div class="content">
+<div class="title">Tai Kwun</div>
+<div class="desc">관람 또는 내부 카페</div>
+</div>
+<a aria-label="지도" class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=Tai%20Kwun%2010%20Hollywood%20Rd%2C%20Central%2C%20Hong%20Kong" target="_blank" title="지도"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M9 18 3.5 20.5A1 1 0 0 1 2 19.6V6.3a1 1 0 0 1 .6-.9L9 2l6 3 5.5-2.5A1 1 0 0 1 22 3.4v13.3a1 1 0 0 1-.6.9L15 21l-6-3Zm0-2.2 6 3V7.2l-6-3v11.6Zm8-8.9v11.2l3-1.4V5.6l-3 1.3ZM4 7v11.1l3-1.4V5.5L4 7Z"></path></svg></a>
+</div><div class="transfer"><div class=""></div><div class="move"><span class="mode">🚶 도보</span><span class="meta">약 5~7분</span></div></div>
+<div class="row food">
+<div class="time">17:30–18:20</div>
+<div class="content">
+<div class="title">Ding Dim 1968</div>
+<div class="desc">딤섬</div>
+<div class="tags"><span class="tag">예약 · 17:30 완료</span><span class="tag">결제 · 트래블로그 / Octopus / 현금</span></div>
+</div>
+<a aria-label="지도" class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=Ding%20Dim%201968%2059%20Wyndham%20St%2C%20Central%2C%20Hong%20Kong" target="_blank" title="지도"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M9 18 3.5 20.5A1 1 0 0 1 2 19.6V6.3a1 1 0 0 1 .6-.9L9 2l6 3 5.5-2.5A1 1 0 0 1 22 3.4v13.3a1 1 0 0 1-.6.9L15 21l-6-3Zm0-2.2 6 3V7.2l-6-3v11.6Zm8-8.9v11.2l3-1.4V5.6l-3 1.3ZM4 7v11.1l3-1.4V5.5L4 7Z"></path></svg></a>
+</div><div class="transfer"><div class=""></div><div class="move"><span class="mode">🚇 MTR</span><span class="meta">Central → Admiralty 환승 → Mong Kok East · 약 25~30분 · 약 HK$13~16 · 결제 트래블로그 / Octopus</span></div></div>
+<div class="row tour">
+<div class="time">19:00–19:50</div>
+<div class="content">
+<div class="title">MOKO</div><div class="desc">정아픽 · 치이카와 스토어</div>
+</div>
+<a aria-label="지도" class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=MOKO%20193%20Prince%20Edward%20Rd%20W%2C%20Mong%20Kok%2C%20Hong%20Kong" target="_blank" title="지도"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M9 18 3.5 20.5A1 1 0 0 1 2 19.6V6.3a1 1 0 0 1 .6-.9L9 2l6 3 5.5-2.5A1 1 0 0 1 22 3.4v13.3a1 1 0 0 1-.6.9L15 21l-6-3Zm0-2.2 6 3V7.2l-6-3v11.6Zm8-8.9v11.2l3-1.4V5.6l-3 1.3ZM4 7v11.1l3-1.4V5.5L4 7Z"></path></svg></a>
+</div><div class="transfer"><div class=""></div><div class="move"><span class="mode">🚕 택시</span><span class="meta">약 10분 · HK$40~55/대 / 🚶 도보 약 25분 · 결제 현금 / 전자결제</span></div></div>
+<div class="row tour">
+<div class="time">20:10–21:00 전후</div>
+<div class="content">
+<div class="title">Temple Street Night Market</div>
+<div class="desc">야시장 구경</div>
+</div>
+<a aria-label="지도" class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=Temple%20Street%20Night%20Market%20Temple%20St%2C%20Jordan%2C%20Hong%20Kong" target="_blank" title="지도"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M9 18 3.5 20.5A1 1 0 0 1 2 19.6V6.3a1 1 0 0 1 .6-.9L9 2l6 3 5.5-2.5A1 1 0 0 1 22 3.4v13.3a1 1 0 0 1-.6.9L15 21l-6-3Zm0-2.2 6 3V7.2l-6-3v11.6Zm8-8.9v11.2l3-1.4V5.6l-3 1.3ZM4 7v11.1l3-1.4V5.5L4 7Z"></path></svg></a>
+</div><div class="transfer"><div class=""></div><div class="move"><span class="mode">🚶 도보</span><span class="meta">약 5~10분 · Woosung Street</span></div></div>
+<div class="row food">
+<div class="time">21:00 이후</div>
+<div class="content">
+<div class="title">Wing Fat Seafood Restaurant</div>
+<div class="desc">맥주 · 가벼운 안주</div>
+<div class="tags"><span class="tag">결제 · 카드 / 디지털결제</span></div></div>
+<a aria-label="지도" class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=Wing%20Fat%20Seafood%20Restaurant%2029-39%20Woosung%20St%2C%20Yau%20Ma%20Tei%2C%20Hong%20Kong" target="_blank" title="지도"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M9 18 3.5 20.5A1 1 0 0 1 2 19.6V6.3a1 1 0 0 1 .6-.9L9 2l6 3 5.5-2.5A1 1 0 0 1 22 3.4v13.3a1 1 0 0 1-.6.9L15 21l-6-3Zm0-2.2 6 3V7.2l-6-3v11.6Zm8-8.9v11.2l3-1.4V5.6l-3 1.3ZM4 7v11.1l3-1.4V5.5L4 7Z"></path></svg></a>
+</div>
+<div class="transfer final-transfer"><div class=""></div><div class="move"><span class="mode">🚕 택시</span><span class="meta">약 10~15분 · 결제 현금 / 전자결제</span></div></div><div class="row other hotel-final">
+<div class="time"></div>
+<div class="content">
+<div class="title">The Salisbury - YMCA of Hong Kong</div>
+</div>
+<a aria-label="숙소까지 추천 경로" class="mapbtn" href="https://www.google.com/maps/dir/?api=1&amp;origin=Wing%20Fat%20Seafood%20Restaurant%2C%2029-39%20Woosung%20Street%2C%20Yau%20Ma%20Tei%2C%20Hong%20Kong&amp;destination=The%20Salisbury%20-%20YMCA%20of%20Hong%20Kong%2C%2041%20Salisbury%20Road%2C%20Tsim%20Sha%20Tsui%2C%20Hong%20Kong&amp;travelmode=driving" target="_blank" title="숙소까지 추천 경로"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M9 18 3.5 20.5A1 1 0 0 1 2 19.6V6.3a1 1 0 0 1 .6-.9L9 2l6 3 5.5-2.5A1 1 0 0 1 22 3.4v13.3a1 1 0 0 1-.6.9L15 21l-6-3Zm0-2.2 6 3V7.2l-6-3v11.6Zm8-8.9v11.2l3-1.4V5.6l-3 1.3ZM4 7v11.1l3-1.4V5.5L4 7Z"></path></svg></a>
+</div></div>
+</section>
+</main>
+</body>
+</html>
