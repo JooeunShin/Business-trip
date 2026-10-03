@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 
+<!DOCTYPE html>
+
 <html lang="ko">
 <head>
 <meta charset="utf-8"/>
@@ -161,6 +163,213 @@ main{padding:18px 12px 48px}
 }
 
 .transfer > div:first-child{width:100%;height:1px;}
+
+.transfer .move:has(.move-line){
+  display:block;
+}
+.transfer .move-line{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  flex-wrap:wrap;
+  min-height:20px;
+}
+
+
+/* Travel preparation */
+.prep{margin-bottom:30px;scroll-margin-top:64px}
+.preptitle{font-size:22px;font-weight:900;letter-spacing:-.03em;margin:0 0 10px 4px}
+.prepgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.prepcard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:15px;box-shadow:var(--shadow)}
+.prepcard.fxcard{grid-column:1/-1}
+.prephead{display:flex;align-items:center;gap:7px;font-size:15px;font-weight:900;margin-bottom:9px;letter-spacing:-.02em}
+.preptext{font-size:12.5px;line-height:1.55;color:#555;margin:0}
+.preptext b{color:#252525}
+.tipline{display:block;margin-top:5px}
+.fxrate{font-size:12px;color:#666;margin:-2px 0 10px}
+.fxgrid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.fxbox{display:grid;grid-template-columns:48px minmax(0,1fr) 16px minmax(90px,1fr);align-items:center;gap:7px;background:#fafaf8;border:1px solid #ecece7;border-radius:12px;padding:10px}
+.fxcode{font-size:12px;font-weight:900;color:#555}
+.fxbox input{width:100%;min-width:0;border:1px solid #deded8;border-radius:9px;background:#fff;padding:9px 10px;font-size:15px;font-weight:800;color:#222;outline:none}
+.fxbox input:focus{border-color:#999}
+.fxequals{color:#aaa;text-align:center}
+.fxout{font-size:15px;font-weight:900;white-space:nowrap;text-align:right}
+.fxnote{font-size:10.5px;color:#999;margin-top:8px;line-height:1.4}
+.quickcheck{grid-column:1/-1;background:#f1f1ee;border:1px solid #e1e1dc;border-radius:14px;padding:11px 13px;font-size:12px;color:#555;line-height:1.55}
+.quickcheck b{color:#333}
+@media(max-width:680px){
+  .preptitle{font-size:20px}
+  .prepgrid{grid-template-columns:1fr}
+  .prepcard.fxcard,.quickcheck{grid-column:auto}
+  .fxgrid{grid-template-columns:1fr}
+  .prepcard{padding:13px}
+  .fxbox{grid-template-columns:44px minmax(0,1fr) 14px minmax(84px,1fr);gap:5px;padding:9px}
+  .fxbox input{font-size:14px;padding:8px}
+  .fxout{font-size:14px}
+}
+
+.preplink{
+  display:inline-block;
+  margin-top:9px;
+  color:#555;
+  font-size:11.5px;
+  font-weight:800;
+  text-decoration:none;
+  border-bottom:1px solid #aaa;
+}
+.preplink:hover{color:#222;border-color:#555}
+
+.lodging-block{
+  margin:16px 0 14px;
+}
+.lodging-title{
+  font-size:15px;
+  font-weight:900;
+  color:#333;
+  margin:0 0 8px;
+}
+.lodging-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+.lodging-card{
+  background:#fff;
+  border:1px solid #e5e5e1;
+  border-radius:14px;
+  padding:13px 14px;
+}
+.lodging-head{
+  font-size:12px;
+  font-weight:900;
+  color:#666;
+  margin-bottom:5px;
+}
+.lodging-name{
+  font-size:14px;
+  font-weight:900;
+  color:#222;
+  line-height:1.35;
+}
+.lodging-local{
+  margin-top:2px;
+  font-size:12px;
+  font-weight:700;
+  color:#555;
+}
+.lodging-address{
+  margin-top:7px;
+  font-size:11.5px;
+  line-height:1.45;
+  color:#777;
+  word-break:break-word;
+}
+.lodging-address.local{
+  margin-top:3px;
+  color:#666;
+}
+.lodging-map{
+  display:inline-block;
+  margin-top:8px;
+  font-size:11.5px;
+  font-weight:800;
+  color:#555;
+  text-decoration:none;
+  border-bottom:1px solid #aaa;
+}
+@media(max-width:680px){
+  .lodging-grid{grid-template-columns:1fr;}
+}
+
+.flight-block{
+  margin:16px 0 14px;
+}
+.flight-title{
+  font-size:15px;
+  font-weight:900;
+  color:#333;
+  margin:0 0 8px;
+}
+.flight-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+.flight-card{
+  background:#fff;
+  border:1px solid #e5e5e1;
+  border-radius:14px;
+  padding:13px 14px;
+}
+.flight-label{
+  font-size:11.5px;
+  font-weight:800;
+  color:#777;
+  margin-bottom:5px;
+}
+.flight-no{
+  font-size:15px;
+  font-weight:900;
+  color:#222;
+}
+.flight-route{
+  margin-top:3px;
+  font-size:13px;
+  font-weight:800;
+  color:#333;
+  line-height:1.4;
+}
+.flight-meta{
+  margin-top:6px;
+  font-size:11.5px;
+  color:#777;
+  line-height:1.4;
+}
+@media(max-width:680px){
+  .flight-grid{grid-template-columns:1fr;}
+}
+
+.app-ready-note{
+  margin-top:10px;
+  padding:8px 10px;
+  border-radius:10px;
+  background:#f5f5f2;
+  color:#555;
+  font-size:11.5px;
+  font-weight:800;
+  line-height:1.45;
+}
+
+.lodging-card{
+  position:relative;
+  padding-right:56px;
+}
+.lodging-map.icon-only{
+  position:absolute;
+  right:14px;
+  top:50%;
+  transform:translateY(-50%);
+  width:34px;
+  height:34px;
+  margin:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid #e1e1dc;
+  border-radius:10px;
+  background:#fafaf8;
+  color:#555;
+  text-decoration:none;
+}
+.lodging-map.icon-only svg{
+  width:18px;
+  height:18px;
+  fill:currentColor;
+}
+.lodging-map.icon-only:hover{
+  background:#f1f1ee;
+  color:#222;
+}
 </style>
 </head>
 <body>
@@ -171,20 +380,67 @@ main{padding:18px 12px 48px}
 </div>
 </header>
 <nav>
-<div class="inner">
+<div class="inner"><a href="#prep">여행 준비</a>
 <a href="#day1">1일차</a>
 <a href="#day2">2일차</a>
 </div>
 </nav>
-<main>
+<main><section class="prep" id="prep">
+<h2 class="preptitle">여행 준비</h2>
+<div class="flight-block"><div class="flight-title">✈️ 항공편</div><div class="flight-grid"><div class="flight-card"><div class="flight-label">10/12(월) · 출국</div><div class="flight-no">KE2001</div><div class="flight-route">ICN T2 08:05  →  HKG T1 10:55</div><div class="flight-meta">3시간 50분 · A330-300 · 일반석(B) 플렉스 · 기내 Wi-Fi</div></div><div class="flight-card"><div class="flight-label">10/16(금) · 귀국</div><div class="flight-no">KE836</div><div class="flight-route">SZX 12:45  →  ICN T2 17:35</div><div class="flight-meta">3시간 50분 · A330-300 · 일반석(U) 스탠다드</div></div></div></div><div class="lodging-block"><div class="lodging-title">🏨 숙소 정보</div><div class="lodging-grid"><div class="lodging-card"><div class="lodging-head">🇭🇰 홍콩 숙소</div><div class="lodging-name">The Salisbury - YMCA of Hong Kong</div><div class="lodging-local">香港基督教青年會 - 港青</div><a aria-label="지도 열기" class="lodging-map icon-only" href="https://www.google.com/maps/search/?api=1&amp;query=The%20Salisbury%20YMCA%20of%20Hong%20Kong%2041%20Salisbury%20Road" rel="noopener" target="_blank" title="지도 열기">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M9 18 3.5 20.5A1 1 0 0 1 2 19.6V6.3a1 1 0 0 1 .6-.9L9 2l6 3 5.5-2.5A1 1 0 0 1 22 3.4v13.3a1 1 0 0 1-.6.9L15 21l-6-3Zm0-2.2 6 3V7.2l-6-3v11.6Zm8-8.9v11.2l3-1.4V5.6l-3 1.3ZM4 7v11.1l3-1.4V5.5L4 7Z"></path>
+</svg>
+</a></div><div class="lodging-card"><div class="lodging-head">🇨🇳 선전 숙소</div><div class="lodging-name">UrCove by Hyatt Shenzhen Futian CBD</div><div class="lodging-local">深圳福田CBD逸扉酒店</div><a aria-label="지도 열기" class="lodging-map icon-only" href="https://www.google.com/maps/search/?api=1&amp;query=UrCove%20by%20Hyatt%20Shenzhen%20Futian%20CBD" rel="noopener" target="_blank" title="지도 열기">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M9 18 3.5 20.5A1 1 0 0 1 2 19.6V6.3a1 1 0 0 1 .6-.9L9 2l6 3 5.5-2.5A1 1 0 0 1 22 3.4v13.3a1 1 0 0 1-.6.9L15 21l-6-3Zm0-2.2 6 3V7.2l-6-3v11.6Zm8-8.9v11.2l3-1.4V5.6l-3 1.3ZM4 7v11.1l3-1.4V5.5L4 7Z"></path>
+</svg>
+</a></div></div></div><div class="prepgrid">
+<div class="prepcard fxcard">
+<div class="prephead">💱 환율 계산기</div>
+<div class="fxrate" id="fxRateText">1 HKD ≈ ₩171.1 · 1 CNY ≈ ₩200.4</div>
+<div class="fxgrid">
+<div class="fxbox">
+<span class="fxcode">HKD</span>
+<input aria-label="홍콩달러 금액" id="hkdInput" inputmode="decimal" min="0" step="1" type="number" value="100"/>
+<span class="fxequals">=</span>
+<strong class="fxout" id="hkdOut">₩17,110</strong>
+</div>
+<div class="fxbox">
+<span class="fxcode">CNY</span>
+<input aria-label="중국 위안 금액" id="cnyInput" inputmode="decimal" min="0" step="1" type="number" value="100"/>
+<span class="fxequals">=</span>
+<strong class="fxout" id="cnyOut">₩20,040</strong>
+</div>
+</div>
+<div class="fxnote" id="fxNote">접속 시 최신 기준환율을 자동으로 불러옵니다. 실제 환전·카드 결제 금액은 적용 환율과 수수료에 따라 달라질 수 있습니다.</div>
+</div>
+<div class="prepcard">
+<div class="prephead">🐙 홍콩 · Octopus</div>
+<p class="preptext"><b>① 한국에서 미리 예약</b> · WAUG의 [인천공항수령] 홍콩 옥토퍼스 카드를 예약하고 수령일은 10/12로 선택.<span class="tipline">예약 후 모바일 바우처·QR을 저장.</span><span class="tipline"><b>② 인천공항 T2에서 수령</b> · 3층 면세점 동편 254번 게이트 Book Store(출국심사 후) · 07:00–20:50</span><span class="tipline">바우처 제시 후 카드 수령. 가능하면 선불 충전 옵션으로 예약하면 홍콩 도착 후 바로 사용 가능.</span><span class="tipline"><b>③ iPhone으로 발급</b> · iPhone X 이상에서 App Store의 Octopus App for Tourists 설치 → 앱 실행 → Add Octopus → Adult → 약관 동의 → 충전금액 입력 → 해외발행 Visa / Mastercard 등으로 결제 → Apple Wallet에 추가.</span><span class="tipline">발급 후에는 앱을 열 필요 없이 iPhone 상단을 Octopus 리더기에 태그하면 사용 가능. 잔액 충전도 Octopus App for Tourists에서 가능.</span></p>
+<a class="preplink" href="https://www.waug.com/ko/activities/107505" rel="noopener" target="_blank">WAUG 인천공항 수령 예약 ↗</a></div><div class="prepcard"><div class="prephead">📝 입국신고서</div><p class="preptext"><b>홍콩</b> · 방문객은 <b>입국·출국카드 작성 불필요.</b><span class="tipline"><b>중국(선전)</b> · Arrival Card 작성 필요. 출발 전에 중국 국가이민관리국(NIA) 공식 사이트에서 온라인 작성 요망. (미리 못 했으면 중국 입국장 QR코드·현장 단말기 또는 종이 입국카드로 작성 가능)</span></p><a class="preplink" href="https://s.nia.gov.cn/ArrivalCardFillingPC/" rel="noopener" target="_blank">중국 입국신고서 공식 작성 ↗</a></div>
+<div class="prepcard">
+<div class="prephead">🇭🇰 홍콩 · 결제</div>
+<p class="preptext">
+<b>트래블로그 + Octopus + 소액 현금</b> 조합이면 충분.
+        <span class="tipline">MTR은 Visa/Mastercard 비접촉 결제가 가능하므로 트래블로그를 바로 태그해도 됨.</span>
+<span class="tipline">동네 식당·소형 매장은 현금만 받는 곳도 있으니 <b>HK$300~500 정도 소액 현금</b>을 개인별로 준비하면 편함.</span>
+</p>
+</div>
+<div class="prepcard">
+<div class="prephead">🇨🇳 선전 · 결제</div>
+<p class="preptext"><b>기본 결제</b> · Alipay를 메인으로 준비하고 WeChat Pay를 백업으로 사용. 출발 전에 여권 인증과 해외카드 등록까지 완료.<span class="tipline"><b>교통</b> · Alipay → Transport → Shenzhen에서 지하철·버스 QR 사용 가능. 선전 지하철은 UnionPay / Visa / Mastercard / Amex / JCB 컨택리스 카드도 전 개찰구에서 바로 태그 가능.</span><span class="tipline"><b>결제 팁</b> · Alipay·WeChat Pay는 해외카드 결제 시 가능하면 1회 ¥200 이하로 결제하면 플랫폼 수수료를 피하기 좋음. UnionPay/컨택리스 카드는 직접 결제·선전 지하철 태그용으로 유용.</span></p>
+</div><div class="prepcard"><div class="prephead">📱 미리 설치할 앱</div><p class="preptext"><b>Alipay 支付宝</b> · 필수. 중국 결제 + 지하철/버스 QR + 택시 호출. 출발 전 여권 인증·카드 등록.<span class="tipline"><b>Amap 高德地图</b> · 중국 본토 지도·도보/대중교통 길찾기용. 선전에서는 Google Maps보다 이쪽을 사용.</span></p><div class="app-ready-note">출국 전: Alipay 설치 → 휴대폰 번호 가입 → 여권 인증 → 결제카드 등록까지 완료</div></div>
+</div>
+</section>
 <section class="day" id="day1">
 <h2 class="daytitle">1일차 - 10/12(월)</h2>
 <div class="schedule">
 <div class="row other">
 <div class="time">08:05–10:55</div>
 <div class="content">
-<div class="title">인천공항 → 홍콩국제공항</div>
-<div class="desc">입국심사 · 수하물 수령</div>
+<div class="title">대한항공 KE2001 · 인천 → 홍콩</div>
+<div class="desc">인천 T2 출발 · 홍콩 T1 도착 · A330-300</div>
 </div>
 <div class="mapspacer"></div>
 </div>
@@ -300,7 +556,7 @@ main{padding:18px 12px 48px}
 <div class="desc">입장권 소지하기</div>
 </div>
 <a aria-label="지도" class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=Hong%20Kong%20Convention%20and%20Exhibition%20Centre%201%20Expo%20Dr%2C%20Wan%20Chai%2C%20Hong%20Kong" target="_blank" title="지도"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M9 18 3.5 20.5A1 1 0 0 1 2 19.6V6.3a1 1 0 0 1 .6-.9L9 2l6 3 5.5-2.5A1 1 0 0 1 22 3.4v13.3a1 1 0 0 1-.6.9L15 21l-6-3Zm0-2.2 6 3V7.2l-6-3v11.6Zm8-8.9v11.2l3-1.4V5.6l-3 1.3ZM4 7v11.1l3-1.4V5.5L4 7Z"></path></svg></a>
-</div><div class="transfer"><div class=""></div><div class="move"><span class="mode">🚕 택시</span><span class="meta">약 5~10분 · HK$35~45/대 / 🚶 도보 약 20분 · 결제 현금 / 전자결제</span></div></div>
+</div><div class="transfer"><div class=""></div><div class="move"><div class="move-line"><span class="mode">🚕 택시</span><span class="meta">약 5~10분 · HK$35~45/대 · 결제 현금 / 전자결제</span></div><div class="move-line"><span class="mode">🚶 도보</span><span class="meta">약 20분</span></div></div></div>
 <div class="row food">
 <div class="time">12:20–13:30</div>
 <div class="content">
@@ -356,7 +612,7 @@ main{padding:18px 12px 48px}
 <div class="title">MOKO</div><div class="desc">정아픽 · 치이카와 스토어</div>
 </div>
 <a aria-label="지도" class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=MOKO%20193%20Prince%20Edward%20Rd%20W%2C%20Mong%20Kok%2C%20Hong%20Kong" target="_blank" title="지도"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M9 18 3.5 20.5A1 1 0 0 1 2 19.6V6.3a1 1 0 0 1 .6-.9L9 2l6 3 5.5-2.5A1 1 0 0 1 22 3.4v13.3a1 1 0 0 1-.6.9L15 21l-6-3Zm0-2.2 6 3V7.2l-6-3v11.6Zm8-8.9v11.2l3-1.4V5.6l-3 1.3ZM4 7v11.1l3-1.4V5.5L4 7Z"></path></svg></a>
-</div><div class="transfer"><div class=""></div><div class="move"><span class="mode">🚕 택시</span><span class="meta">약 10분 · HK$40~55/대 / 🚶 도보 약 25분 · 결제 현금 / 전자결제</span></div></div>
+</div><div class="transfer"><div class=""></div><div class="move"><div class="move-line"><span class="mode">🚕 택시</span><span class="meta">약 10분 · HK$40~55/대 · 결제 현금 / 전자결제</span></div><div class="move-line"><span class="mode">🚶 도보</span><span class="meta">약 25분</span></div></div></div>
 <div class="row tour">
 <div class="time">20:10–21:00 전후</div>
 <div class="content">
@@ -382,5 +638,49 @@ main{padding:18px 12px 48px}
 </div></div>
 </section>
 </main>
-</body>
+<script id="fx-script">
+(() => {
+  let rates = { HKD: 171.1, CNY: 200.4 };
+  const fmt = n => '₩' + Math.round(n).toLocaleString('ko-KR');
+  const hkdInput = document.getElementById('hkdInput');
+  const cnyInput = document.getElementById('cnyInput');
+  const hkdOut = document.getElementById('hkdOut');
+  const cnyOut = document.getElementById('cnyOut');
+  const rateText = document.getElementById('fxRateText');
+  const note = document.getElementById('fxNote');
+
+  const render = () => {
+    const h = Math.max(0, Number(hkdInput?.value || 0));
+    const c = Math.max(0, Number(cnyInput?.value || 0));
+    if (hkdOut) hkdOut.textContent = fmt(h * rates.HKD);
+    if (cnyOut) cnyOut.textContent = fmt(c * rates.CNY);
+    if (rateText) rateText.textContent = `1 HKD ≈ ₩${rates.HKD.toFixed(1)} · 1 CNY ≈ ₩${rates.CNY.toFixed(1)}`;
+  };
+
+  hkdInput?.addEventListener('input', render);
+  cnyInput?.addEventListener('input', render);
+  render();
+
+  Promise.all([
+    fetch('https://api.frankfurter.app/latest?from=HKD&to=KRW').then(r => {
+      if (!r.ok) throw new Error('HKD rate');
+      return r.json();
+    }),
+    fetch('https://api.frankfurter.app/latest?from=CNY&to=KRW').then(r => {
+      if (!r.ok) throw new Error('CNY rate');
+      return r.json();
+    })
+  ]).then(([hkd, cny]) => {
+    if (Number(hkd?.rates?.KRW)) rates.HKD = Number(hkd.rates.KRW);
+    if (Number(cny?.rates?.KRW)) rates.CNY = Number(cny.rates.KRW);
+    render();
+    const dates = [hkd?.date, cny?.date].filter(Boolean).sort();
+    if (note && dates.length) {
+      note.textContent = `${dates[dates.length - 1]} 기준환율 · 실제 환전·카드 결제 금액은 적용 환율과 수수료에 따라 달라질 수 있습니다.`;
+    }
+  }).catch(() => {
+    if (note) note.textContent = '환율 자동 업데이트 실패 · 2026-10-03 참고값을 표시 중입니다. 실제 환전·카드 결제 금액은 다를 수 있습니다.';
+  });
+})();
+</script></body>
 </html>
