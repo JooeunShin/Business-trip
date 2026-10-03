@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>중국출장 일정표</title>
+<style>
+:root {
+  --bg:#f4f1ea; --paper:#fffdf9; --ink:#1c1c1c; --muted:#6d675f;
+  --red:#b92f35; --line:#ded6ca; --shadow:0 8px 24px rgba(47,38,27,.08);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Segoe UI",sans-serif;line-height:1.55}
+header{background:#a8292f;color:white;padding:30px 18px 24px}
+header .wrap, main{max-width:920px;margin:auto}
+h1{margin:0;font-size:34px;letter-spacing:-.03em}
+header p{margin:8px 0 0;opacity:.9;font-size:14px}
+nav{position:sticky;top:0;background:rgba(255,253,249,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:10}
+nav .wrap{max-width:920px;margin:auto;display:flex;gap:8px;padding:9px 12px}
+nav a{text-decoration:none;color:var(--ink);font-weight:800;padding:8px 12px;border-radius:10px}
+main{padding:22px 12px 50px}
+section{margin-bottom:38px}
+.dayhead{margin-bottom:14px}
+.dayhead h2{margin:0;font-size:27px}
+.date{color:var(--muted);font-weight:700;font-size:14px}
+.timeline{position:relative}
+.timeline:before{content:"";position:absolute;left:18px;top:10px;bottom:15px;width:2px;background:var(--line)}
+.stop{position:relative;display:grid;grid-template-columns:48px 1fr;gap:10px;margin:0 0 12px}
+.dot{width:36px;height:36px;border:2px solid var(--red);background:var(--paper);border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:2}
+.box{background:var(--paper);border:1px solid var(--line);border-radius:15px;padding:13px 14px;box-shadow:var(--shadow)}
+.time{font-size:13px;color:var(--red);font-weight:900}
+h3{margin:2px 0 4px;font-size:18px}
+.note{font-size:14px;color:#44403b}
+.actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:9px}
+.btn{display:inline-block;text-decoration:none;background:var(--ink);color:white;padding:8px 11px;border-radius:9px;font-size:13px;font-weight:800}
+.btn.alt{background:#ece6dc;color:var(--ink)}
+.tag{display:inline-block;margin-top:7px;margin-right:5px;border-radius:999px;padding:4px 8px;font-size:12px;font-weight:700;background:#eee8de}
+.tag.red{background:#f7e2e3;color:#8c2026}
+.tag.green{background:#e4efe9;color:#215b45}
+.choices{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:9px}
+.choice{background:#fffaf2;border:1px dashed #cfc0ad;border-radius:12px;padding:10px;font-size:13px}
+.choice b{display:block;margin-bottom:3px}
+@media(max-width:720px){
+  .choices{grid-template-columns:1fr}
+  h1{font-size:30px}
+  .stop{grid-template-columns:43px 1fr}
+  .dot{width:32px;height:32px}
+}
+</style>
+</head>
+<body>
+<header>
+<div class="wrap">
+  <h1>중국출장 일정표</h1>
+  <p>홍콩 · 2026년 10월 12일~13일 · 8명</p>
+</div>
+</header>
+
+<nav><div class="wrap">
+  <a href="#day1">10/12 월</a>
+  <a href="#day2">10/13 화</a>
+</div></nav>
+
+<main>
+<section id="day1">
+  <div class="dayhead"><h2>10/12(월) · 침사추이</h2><div class="date">1일차</div></div>
+  <div class="timeline">
+
+    <div class="stop"><div class="dot">✈️</div><div class="box">
+      <div class="time">08:05 → 10:55</div><h3>인천공항 → 홍콩국제공항</h3>
+      <div class="note">입국심사와 수하물 수령 후 12시 전후 공항 밖으로 이동 예상.</div>
+    </div></div>
+
+    <div class="stop"><div class="dot">🚌</div><div class="box">
+      <div class="time">12:00 전후</div><h3>A21 공항버스 → 침사추이</h3>
+      <div class="note">공항 Ground Transportation Centre에서 탑승.</div>
+      <span class="tag green">트래블로그 Mastercard 가능</span>
+      <span class="tag green">Octopus 가능</span>
+      <span class="tag">현금은 거스름돈 없음</span>
+    </div></div>
+
+    <div class="stop"><div class="dot">🧳</div><div class="box">
+      <div class="time">13:10~13:30</div><h3>The Salisbury - YMCA of Hong Kong</h3>
+      <div class="note">캐리어만 맡기고 바로 출발. 체크인은 밤에 복귀 후.</div>
+      <div class="actions"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=The%20Salisbury%20-%20YMCA%20of%20Hong%20Kong%2041%20Salisbury%20Rd%2C%20Tsim%20Sha%20Tsui%2C%20Hong%20Kong" target="_blank">Google 지도</a></div>
+    </div></div>
+
+    <div class="stop"><div class="dot">🍜</div><div class="box">
+      <div class="time">13:30~14:20</div><h3>Shek Kee Wonton Noodles</h3>
+      <div class="note">완탕면 점심.</div>
+      <span class="tag red">현금만</span>
+      <div class="actions"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Shek%20Kee%20Wonton%20Noodles%20Shop%20B%2C%205%20Ichang%20St%2C%20Tsim%20Sha%20Tsui%2C%20Hong%20Kong" target="_blank">Google 지도</a></div>
+    </div></div>
+
+    <div class="stop"><div class="dot">🎁</div><div class="box">
+      <div class="time">14:20~14:50</div><h3>Elegant Tang Dynasty</h3>
+      <div class="note">홍콩 기념품 구경.</div>
+      <div class="actions"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Elegant%20Tang%20Dynasty%2027-33%20Nathan%20Rd%2C%20Tsim%20Sha%20Tsui%2C%20Hong%20Kong" target="_blank">Google 지도</a></div>
+    </div></div>
+
+    <div class="stop"><div class="dot">☕</div><div class="box">
+      <div class="time">14:50~15:50</div><h3>카페</h3>
+      <div class="note">장소 추후 결정.</div>
+    </div></div>
+
+    <div class="stop"><div class="dot">↔️</div><div class="box">
+      <div class="time">16:00~17:10</div><h3>자유시간</h3>
+      <div class="choices">
+        <div class="choice"><b>🎨 미술관</b>Hong Kong Museum of Art
+          <div class="actions"><a class="btn alt" href="https://www.google.com/maps/search/?api=1&query=Hong%20Kong%20Museum%20of%20Art%2010%20Salisbury%20Rd%2C%20Tsim%20Sha%20Tsui%2C%20Hong%20Kong" target="_blank">지도</a></div>
+        </div>
+        <div class="choice"><b>🚶 주변 산책</b>1881 Heritage / Harbour City
+          <div class="actions"><a class="btn alt" href="https://www.google.com/maps/search/?api=1&query=1881%20Heritage%202A%20Canton%20Rd%2C%20Tsim%20Sha%20Tsui%2C%20Hong%20Kong" target="_blank">지도</a></div>
+        </div>
+        <div class="choice"><b>🛏️ 숙소 휴식</b>The Salisbury - YMCA에서 휴식
+          <div class="actions"><a class="btn alt" href="https://www.google.com/maps/search/?api=1&query=The%20Salisbury%20-%20YMCA%20of%20Hong%20Kong%2041%20Salisbury%20Rd%2C%20Tsim%20Sha%20Tsui%2C%20Hong%20Kong" target="_blank">숙소 지도</a></div>
+        </div>
+      </div>
+      <div class="note" style="margin-top:9px"><b>17:10까지 다시 합류.</b></div>
+    </div></div>
+
+    <div class="stop"><div class="dot">🌆</div><div class="box">
+      <div class="time">17:10~18:10</div><h3>Avenue of Stars · 빅토리아 하버</h3>
+      <div class="note">8명 재합류 후 하버 산책.</div>
+      <div class="actions"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Avenue%20of%20Stars%20Tsim%20Sha%20Tsui%2C%20Hong%20Kong" target="_blank">Google 지도</a></div>
+    </div></div>
+
+    <div class="stop"><div class="dot">🌶️</div><div class="box">
+      <div class="time">19:00</div><h3>Little Fish · 카오위</h3>
+      <div class="note">8명 OpenRice 예약 확정. 18:40~18:50 도착 목표.</div>
+      <span class="tag red">예약 확정</span><span class="tag green">카드·Octopus 가능</span>
+      <div class="actions"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Little%20Fish%201/F%2C%2016%20Cameron%20Rd%2C%20Tsim%20Sha%20Tsui%2C%20Hong%20Kong" target="_blank">Google 지도</a></div>
+    </div></div>
+
+    <div class="stop"><div class="dot">🍺</div><div class="box">
+      <div class="time">21:00 전후</div><h3>Kowloon Taproom</h3>
+      <div class="note">홍콩 로컬 수제맥주. 8명은 좌석이 나뉠 수 있음.</div>
+      <div class="actions"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Kowloon%20Taproom%2010-14%20Ashley%20Rd%2C%20Tsim%20Sha%20Tsui%2C%20Hong%20Kong" target="_blank">Google 지도</a></div>
+    </div></div>
+  </div>
+</section>
+
+<section id="day2">
+  <div class="dayhead"><h2>10/13(화) · 완차이 → 센트럴 → 몽콕 → 야우마테이</h2><div class="date">2일차</div></div>
+  <div class="timeline">
+
+    <div class="stop"><div class="dot">🥛</div><div class="box">
+      <div class="time">07:45~08:35</div><h3>숙소 근처 차찬텡 아침</h3>
+      <div class="note">밀크티 + 빵 등. 장소 추후 결정.</div>
+    </div></div>
+
+    <div class="stop"><div class="dot">⛴️</div><div class="box">
+      <div class="time">09:00 전후</div><h3>Star Ferry · 침사추이 → 완차이</h3>
+      <div class="note">Tsim Sha Tsui Star Ferry Pier에서 탑승.</div>
+      <div class="actions">
+        <a class="btn alt" href="https://www.google.com/maps/search/?api=1&query=Tsim%20Sha%20Tsui%20Star%20Ferry%20Pier%20Hong%20Kong" target="_blank">출발 선착장</a>
+        <a class="btn alt" href="https://www.google.com/maps/search/?api=1&query=Wan%20Chai%20Ferry%20Pier%20Hong%20Kong" target="_blank">도착 선착장</a>
+      </div>
+    </div></div>
+
+    <div class="stop"><div class="dot">💻</div><div class="box">
+      <div class="time">10:00~12:00</div><h3>HKTDC Hong Kong Electronics Fair</h3>
+      <div class="note">HKCEC에서 약 2시간 관람.</div>
+      <div class="actions"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Hong%20Kong%20Convention%20and%20Exhibition%20Centre%201%20Expo%20Dr%2C%20Wan%20Chai%2C%20Hong%20Kong" target="_blank">Google 지도</a></div>
+    </div></div>
+
+    <div class="stop"><div class="dot">🍖</div><div class="box">
+      <div class="time">12:20~13:30</div><h3>FAT J Char Siu</h3>
+      <div class="note">완차이에서 차슈 점심.</div>
+      <div class="actions"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=FAT%20J%20Char%20Siu%20Rialto%20Building%2C%20Landale%20St%2C%20Wan%20Chai%2C%20Hong%20Kong" target="_blank">Google 지도</a></div>
+    </div></div>
+
+    <div class="stop"><div class="dot">🥧</div><div class="box">
+      <div class="time">13:50~14:10</div><h3>Bakehouse Wan Chai</h3>
+      <div class="note">에그타르트.</div>
+      <div class="actions"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Bakehouse%20Wan%20Chai%2014%20Tai%20Wong%20St%20E%2C%20Wan%20Chai%2C%20Hong%20Kong" target="_blank">Google 지도</a></div>
+    </div></div>
+
+    <div class="stop"><div class="dot">🚋</div><div class="box">
+      <div class="time">14:30~15:00 전후</div><h3>딩딩트램 · 완차이 → 센트럴</h3>
+      <div class="note"><b>뒤로 타고 → 앞으로 내리고 → 내릴 때 결제.</b> 가능하면 2층 좌석.</div>
+      <span class="tag green">트래블로그 Mastercard 가능</span><span class="tag green">Octopus 가능</span>
+    </div></div>
+
+    <div class="stop"><div class="dot">🏬</div><div class="box">
+      <div class="time">15:00~15:40</div><h3>Central Market</h3>
+      <div class="note">옛 시장 건물을 재생한 쇼핑·문화공간.</div>
+      <div class="actions"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Central%20Market%2093%20Queen%27s%20Road%20Central%2C%20Central%2C%20Hong%20Kong" target="_blank">Google 지도</a></div>
+    </div></div>
+
+    <div class="stop"><div class="dot">🚶</div><div class="box">
+      <div class="time">15:40~16:15</div><h3>센트럴 골목 산책</h3>
+      <div class="note">Pottinger Street / Mid-Levels Escalator 주변.</div>
+      <div class="actions">
+        <a class="btn alt" href="https://www.google.com/maps/search/?api=1&query=Pottinger%20Street%20Central%2C%20Hong%20Kong" target="_blank">Pottinger Street</a>
+        <a class="btn alt" href="https://www.google.com/maps/search/?api=1&query=Central-Mid-Levels%20Escalator%20Central%2C%20Hong%20Kong" target="_blank">Mid-Levels</a>
+      </div>
+    </div></div>
+
+    <div class="stop"><div class="dot">🏛️</div><div class="box">
+      <div class="time">16:15~17:20</div><h3>Tai Kwun</h3>
+      <div class="note">역사·건축을 보고 싶은 사람은 구경하고, 관심 없는 사람은 내부 카페에서 쉬기.</div>
+      <div class="actions"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Tai%20Kwun%2010%20Hollywood%20Rd%2C%20Central%2C%20Hong%20Kong" target="_blank">Google 지도</a></div>
+    </div></div>
+
+    <div class="stop"><div class="dot">🥟</div><div class="box">
+      <div class="time">17:30~18:20</div><h3>Ding Dim 1968</h3>
+      <div class="note">딤섬. 이후 야시장 일정이 있으니 너무 과식하지 않기.</div>
+      <span class="tag">8명 예약 권장</span>
+      <span class="tag green">Cash · Visa · Mastercard · Octopus</span>
+      <div class="actions">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Ding%20Dim%201968%2059%20Wyndham%20St%2C%20Central%2C%20Hong%20Kong" target="_blank">Google 지도</a>
+        <a class="btn alt" href="https://www.dingdim.com/reservation.html" target="_blank">예약 페이지</a>
+      </div>
+    </div></div>
+
+    <div class="stop"><div class="dot">🛍️</div><div class="box">
+      <div class="time">19:00~19:50</div><h3>MOKO</h3>
+      <div class="note">Mong Kok East역 바로 위. 쇼핑.</div>
+      <div class="actions"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=MOKO%20193%20Prince%20Edward%20Rd%20W%2C%20Mong%20Kok%2C%20Hong%20Kong" target="_blank">Google 지도</a></div>
+    </div></div>
+
+    <div class="stop"><div class="dot">🌙</div><div class="box">
+      <div class="time">20:10~21:00 전후</div><h3>Temple Street Night Market</h3>
+      <div class="note">야시장 구경이 밤 일정의 중심. 구경하면서 Woosung Street 방향으로 이동.</div>
+      <div class="actions"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Temple%20Street%20Night%20Market%20Temple%20St%2C%20Jordan%2C%20Hong%20Kong" target="_blank">Google 지도</a></div>
+    </div></div>
+
+    <div class="stop"><div class="dot">🍺</div><div class="box">
+      <div class="time">21:00 이후</div><h3>Wing Fat Seafood Restaurant</h3>
+      <div class="note">야시장 구경 끝에 맥주 + 가벼운 안주. 메인 저녁보다는 분위기 즐기기.</div>
+      <div class="actions"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Wing%20Fat%20Seafood%20Restaurant%2029-39%20Woosung%20St%2C%20Yau%20Ma%20Tei%2C%20Hong%20Kong" target="_blank">Google 지도</a></div>
+    </div></div>
+
+  </div>
+</section>
+</main>
+</body>
+</html>
