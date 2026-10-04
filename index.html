@@ -370,6 +370,22 @@ main{padding:18px 12px 48px}
   background:#f1f1ee;
   color:#222;
 }
+
+nav .inner{
+  overflow-x:auto;
+  white-space:nowrap;
+  scrollbar-width:none;
+}
+nav .inner::-webkit-scrollbar{display:none;}
+
+.tag.actiontag{
+  text-decoration:none;
+  cursor:pointer;
+}
+.tag.actiontag:hover{
+  background:#e9e9e5;
+  color:#222;
+}
 </style>
 </head>
 <body>
@@ -383,15 +399,15 @@ main{padding:18px 12px 48px}
 <div class="inner"><a href="#prep">여행 준비</a>
 <a href="#day1">1일차</a>
 <a href="#day2">2일차</a>
-</div>
+<a href="#day3">3일차</a><a href="#day4">4일차</a><a href="#day5">5일차</a></div>
 </nav>
 <main><section class="prep" id="prep">
 <h2 class="preptitle">여행 준비</h2>
-<div class="flight-block"><div class="flight-title">✈️ 항공편</div><div class="flight-grid"><div class="flight-card"><div class="flight-label">10/12(월) · 출국</div><div class="flight-no">KE2001</div><div class="flight-route">ICN T2 08:05  →  HKG T1 10:55</div><div class="flight-meta">3시간 50분 · A330-300 · 일반석(B) 플렉스 · 기내 Wi-Fi</div></div><div class="flight-card"><div class="flight-label">10/16(금) · 귀국</div><div class="flight-no">KE836</div><div class="flight-route">SZX 12:45  →  ICN T2 17:35</div><div class="flight-meta">3시간 50분 · A330-300 · 일반석(U) 스탠다드</div></div></div></div><div class="lodging-block"><div class="lodging-title">🏨 숙소 정보</div><div class="lodging-grid"><div class="lodging-card"><div class="lodging-head">🇭🇰 홍콩 숙소</div><div class="lodging-name">The Salisbury - YMCA of Hong Kong</div><div class="lodging-local">香港基督教青年會 - 港青</div><a aria-label="지도 열기" class="lodging-map icon-only" href="https://www.google.com/maps/search/?api=1&amp;query=The%20Salisbury%20YMCA%20of%20Hong%20Kong%2041%20Salisbury%20Road" rel="noopener" target="_blank" title="지도 열기">
+<div class="flight-block"><div class="flight-title">✈️ 항공편</div><div class="flight-grid"><div class="flight-card"><div class="flight-label">10/12(월) · 출국</div><div class="flight-no">KE2001</div><div class="flight-route">ICN T2 08:05  →  HKG T1 10:55</div><div class="flight-meta">3시간 50분 · A330-300 · 기내 Wi-Fi</div></div><div class="flight-card"><div class="flight-label">10/16(금) · 귀국</div><div class="flight-no">KE836</div><div class="flight-route">SZX 12:45  →  ICN T2 17:35</div><div class="flight-meta">3시간 50분 · A330-300</div></div></div></div><div class="lodging-block"><div class="lodging-title">🏨 숙소 정보</div><div class="lodging-grid"><div class="lodging-card"><div class="lodging-head">🇭🇰 홍콩 숙소</div><div class="lodging-name">The Salisbury - YMCA of Hong Kong</div><div class="lodging-local">香港基督教青年會 - 港青</div><a aria-label="지도 열기" class="lodging-map icon-only" href="https://www.google.com/maps/search/?api=1&amp;query=The%20Salisbury%20YMCA%20of%20Hong%20Kong%2041%20Salisbury%20Road" rel="noopener" target="_blank" title="지도 열기">
 <svg aria-hidden="true" viewbox="0 0 24 24">
 <path d="M9 18 3.5 20.5A1 1 0 0 1 2 19.6V6.3a1 1 0 0 1 .6-.9L9 2l6 3 5.5-2.5A1 1 0 0 1 22 3.4v13.3a1 1 0 0 1-.6.9L15 21l-6-3Zm0-2.2 6 3V7.2l-6-3v11.6Zm8-8.9v11.2l3-1.4V5.6l-3 1.3ZM4 7v11.1l3-1.4V5.5L4 7Z"></path>
 </svg>
-</a></div><div class="lodging-card"><div class="lodging-head">🇨🇳 선전 숙소</div><div class="lodging-name">UrCove by Hyatt Shenzhen Futian CBD</div><div class="lodging-local">深圳福田CBD逸扉酒店</div><a aria-label="지도 열기" class="lodging-map icon-only" href="https://www.google.com/maps/search/?api=1&amp;query=UrCove%20by%20Hyatt%20Shenzhen%20Futian%20CBD" rel="noopener" target="_blank" title="지도 열기">
+</a></div><div class="lodging-card"><div class="lodging-head">🇨🇳 선전 숙소</div><div class="lodging-name">UrCove by Hyatt Shenzhen Futian CBD</div><div class="lodging-local">深圳福田CBD逸扉酒店</div><a aria-label="Amap 지도 열기" class="lodging-map icon-only" href="https://uri.amap.com/search?keyword=%E6%B7%B1%E5%9C%B3%E7%A6%8F%E7%94%B0CBD%E9%80%B8%E6%89%89%E9%85%92%E5%BA%97&amp;city=%E6%B7%B1%E5%9C%B3&amp;view=map&amp;src=Business-trip&amp;callnative=1" rel="noopener" target="_blank" title="Amap 지도 열기">
 <svg aria-hidden="true" viewbox="0 0 24 24">
 <path d="M9 18 3.5 20.5A1 1 0 0 1 2 19.6V6.3a1 1 0 0 1 .6-.9L9 2l6 3 5.5-2.5A1 1 0 0 1 22 3.4v13.3a1 1 0 0 1-.6.9L15 21l-6-3Zm0-2.2 6 3V7.2l-6-3v11.6Zm8-8.9v11.2l3-1.4V5.6l-3 1.3ZM4 7v11.1l3-1.4V5.5L4 7Z"></path>
 </svg>
@@ -418,7 +434,7 @@ main{padding:18px 12px 48px}
 <div class="prepcard">
 <div class="prephead">🐙 홍콩 · Octopus</div>
 <p class="preptext"><b>① 한국에서 미리 예약</b> · WAUG의 [인천공항수령] 홍콩 옥토퍼스 카드를 예약하고 수령일은 10/12로 선택.<span class="tipline">예약 후 모바일 바우처·QR을 저장.</span><span class="tipline"><b>② 인천공항 T2에서 수령</b> · 3층 면세점 동편 254번 게이트 Book Store(출국심사 후) · 07:00–20:50</span><span class="tipline">바우처 제시 후 카드 수령. 가능하면 선불 충전 옵션으로 예약하면 홍콩 도착 후 바로 사용 가능.</span><span class="tipline"><b>③ iPhone으로 발급</b> · iPhone X 이상에서 App Store의 Octopus App for Tourists 설치 → 앱 실행 → Add Octopus → Adult → 약관 동의 → 충전금액 입력 → 해외발행 Visa / Mastercard 등으로 결제 → Apple Wallet에 추가.</span><span class="tipline">발급 후에는 앱을 열 필요 없이 iPhone 상단을 Octopus 리더기에 태그하면 사용 가능. 잔액 충전도 Octopus App for Tourists에서 가능.</span></p>
-<a class="preplink" href="https://www.waug.com/ko/activities/107505" rel="noopener" target="_blank">WAUG 인천공항 수령 예약 ↗</a></div><div class="prepcard"><div class="prephead">📝 입국신고서</div><p class="preptext"><b>홍콩</b> · 방문객은 <b>입국·출국카드 작성 불필요.</b><span class="tipline"><b>중국(선전)</b> · Arrival Card 작성 필요. 출발 전에 중국 국가이민관리국(NIA) 공식 사이트에서 온라인 작성 요망. (미리 못 했으면 중국 입국장 QR코드·현장 단말기 또는 종이 입국카드로 작성 가능)</span></p><a class="preplink" href="https://s.nia.gov.cn/ArrivalCardFillingPC/" rel="noopener" target="_blank">중국 입국신고서 공식 작성 ↗</a></div>
+<a class="preplink" href="https://www.waug.com/ko/activities/107505" rel="noopener" target="_blank">WAUG 인천공항 수령 예약 ↗</a></div><div class="prepcard"><div class="prephead">📝 입국신고서</div><p class="preptext"><b>홍콩</b> · 방문객은 입국·출국카드 작성 불필요.<span class="tipline"><b>중국(선전)</b> · <b>Arrival Card 작성 필요</b>. 출발 전에 중국 국가이민관리국(NIA) 공식 사이트에서 <b>온라인 작성 요망</b>. (미리 못 했으면 중국 입국장 QR코드·현장 단말기 또는 종이 입국카드로 작성 가능)</span></p><a class="preplink" href="https://s.nia.gov.cn/ArrivalCardFillingPC/" rel="noopener" target="_blank">중국 입국신고서 공식 작성 ↗</a></div>
 <div class="prepcard">
 <div class="prephead">🇭🇰 홍콩 · 결제</div>
 <p class="preptext">
@@ -430,7 +446,7 @@ main{padding:18px 12px 48px}
 <div class="prepcard">
 <div class="prephead">🇨🇳 선전 · 결제</div>
 <p class="preptext"><b>기본 결제</b> · Alipay를 메인으로 준비하고 WeChat Pay를 백업으로 사용. 출발 전에 여권 인증과 해외카드 등록까지 완료.<span class="tipline"><b>교통</b> · Alipay → Transport → Shenzhen에서 지하철·버스 QR 사용 가능. 선전 지하철은 UnionPay / Visa / Mastercard / Amex / JCB 컨택리스 카드도 전 개찰구에서 바로 태그 가능.</span><span class="tipline"><b>결제 팁</b> · Alipay·WeChat Pay는 해외카드 결제 시 가능하면 1회 ¥200 이하로 결제하면 플랫폼 수수료를 피하기 좋음. UnionPay/컨택리스 카드는 직접 결제·선전 지하철 태그용으로 유용.</span></p>
-</div><div class="prepcard"><div class="prephead">📱 미리 설치할 앱</div><p class="preptext"><b>Alipay 支付宝</b> · 필수. 중국 결제 + 지하철/버스 QR + 택시 호출. 출발 전 여권 인증·카드 등록.<span class="tipline"><b>Amap 高德地图</b> · 중국 본토 지도·도보/대중교통 길찾기용. 선전에서는 Google Maps보다 이쪽을 사용.</span></p><div class="app-ready-note">출국 전: Alipay 설치 → 휴대폰 번호 가입 → 여권 인증 → 결제카드 등록까지 완료</div></div>
+</div><div class="prepcard"><div class="prephead">📱 미리 설치할 앱</div><p class="preptext"><b>Alipay 支付宝</b> · 필수. 중국 결제 + 지하철/버스 QR + 택시 호출. 출발 전 여권 인증·카드 등록.<span class="tipline"><b>Amap 高德地图</b> · 중국 본토 지도·도보/대중교통 길찾기용. 선전에서는 Google Maps보다 이쪽을 사용.</span><span class="tipline"><b>美团 Meituan</b> · 음식배달·식당 검색용. 호텔에서 배달 주문할 때 사용.</span><span class="tipline"><b>大众点评 Dianping</b> · 식당 검색·리뷰·원격 대기번호(排队/取号)용.</span></p><div class="app-ready-note">출국 전: Alipay 설치 → 휴대폰 번호 가입 → 여권 인증 → 결제카드 등록까지 완료</div></div>
 </div>
 </section>
 <section class="day" id="day1">
@@ -637,7 +653,59 @@ main{padding:18px 12px 48px}
 <a aria-label="숙소까지 추천 경로" class="mapbtn" href="https://www.google.com/maps/dir/?api=1&amp;origin=Wing%20Fat%20Seafood%20Restaurant%2C%2029-39%20Woosung%20Street%2C%20Yau%20Ma%20Tei%2C%20Hong%20Kong&amp;destination=The%20Salisbury%20-%20YMCA%20of%20Hong%20Kong%2C%2041%20Salisbury%20Road%2C%20Tsim%20Sha%20Tsui%2C%20Hong%20Kong&amp;travelmode=driving" target="_blank" title="숙소까지 추천 경로"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M9 18 3.5 20.5A1 1 0 0 1 2 19.6V6.3a1 1 0 0 1 .6-.9L9 2l6 3 5.5-2.5A1 1 0 0 1 22 3.4v13.3a1 1 0 0 1-.6.9L15 21l-6-3Zm0-2.2 6 3V7.2l-6-3v11.6Zm8-8.9v11.2l3-1.4V5.6l-3 1.3ZM4 7v11.1l3-1.4V5.5L4 7Z"></path></svg></a>
 </div></div>
 </section>
-</main>
+<section class="day" id="day3"><h2 class="daytitle">3일차 - 10/14(수)</h2><div class="schedule"><div class="row other"><div class="time">08:00</div><div class="content"><div class="title">The Salisbury - YMCA 체크아웃</div></div><a aria-label="지도" class="mapbtn" href="https://www.google.com/maps/search/?api=1&amp;query=The%20Salisbury%20YMCA%20of%20Hong%20Kong%2041%20Salisbury%20Road%20Hong%20Kong" rel="noopener" target="_blank" title="지도">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M9 18 3.5 20.5A1 1 0 0 1 2 19.6V6.3a1 1 0 0 1 .6-.9L9 2l6 3 5.5-2.5A1 1 0 0 1 22 3.4v13.3a1 1 0 0 1-.6.9L15 21l-6-3Zm0-2.2 6 3V7.2l-6-3v11.6Zm8-8.9v11.2l3-1.4V5.6l-3 1.3ZM4 7v11.1l3-1.4V5.5L4 7Z"></path>
+</svg>
+</a></div><div class="transfer"><div></div><div class="move"><span class="mode">🚕 택시</span><span class="meta">홍콩 서구룡역 · 약 10~15분 · 결제 현금 / 전자결제</span></div></div><div class="row other"><div class="time">09:02–09:18</div><div class="content"><div class="title">고속철도 · 홍콩 서구룡 → 선전 푸톈</div><div class="desc">09:02 출발편 예매 예정 · 푸톈역 09:18 도착</div></div><a aria-label="Amap 지도" class="mapbtn" href="https://uri.amap.com/search?keyword=%E7%A6%8F%E7%94%B0%E7%AB%99&amp;city=%E6%B7%B1%E5%9C%B3&amp;view=map&amp;src=Business-trip&amp;callnative=1" rel="noopener" target="_blank" title="Amap 지도">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M9 18 3.5 20.5A1 1 0 0 1 2 19.6V6.3a1 1 0 0 1 .6-.9L9 2l6 3 5.5-2.5A1 1 0 0 1 22 3.4v13.3a1 1 0 0 1-.6.9L15 21l-6-3Zm0-2.2 6 3V7.2l-6-3v11.6Zm8-8.9v11.2l3-1.4V5.6l-3 1.3ZM4 7v11.1l3-1.4V5.5L4 7Z"></path>
+</svg>
+</a></div><div class="transfer"><div></div><div class="move"><span class="mode">🚶 도보</span><span class="meta">푸톈역 → 숙소 약 5~10분</span></div></div><div class="row other"><div class="time">09:35 전후</div><div class="content"><div class="title">UrCove by Hyatt Shenzhen Futian CBD</div><div class="desc">짐 맡기기 · CHAGEE 霸王茶姬 배달 주문</div></div><a aria-label="Amap 지도" class="mapbtn" href="https://uri.amap.com/search?keyword=%E6%B7%B1%E5%9C%B3%E7%A6%8F%E7%94%B0CBD%E9%80%B8%E6%89%89%E9%85%92%E5%BA%97&amp;city=%E6%B7%B1%E5%9C%B3&amp;view=map&amp;src=Business-trip&amp;callnative=1" rel="noopener" target="_blank" title="Amap 지도">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M9 18 3.5 20.5A1 1 0 0 1 2 19.6V6.3a1 1 0 0 1 .6-.9L9 2l6 3 5.5-2.5A1 1 0 0 1 22 3.4v13.3a1 1 0 0 1-.6.9L15 21l-6-3Zm0-2.2 6 3V7.2l-6-3v11.6Zm8-8.9v11.2l3-1.4V5.6l-3 1.3ZM4 7v11.1l3-1.4V5.5L4 7Z"></path>
+</svg>
+</a></div><div class="row food"><div class="time">11:00–12:00</div><div class="content"><div class="title">점심</div><div class="desc">호텔 주변 · 장소 추후 결정</div></div><div class="mapspacer"></div></div><div class="transfer"><div></div><div class="move"><span class="mode">🚕 택시</span><span class="meta">TCT 전시장 약 50~60분 · 결제 Alipay / 현금</span></div></div><div class="row exhibit"><div class="time">13:00–18:00</div><div class="content"><div class="title">TCT Shenzhen 2026</div><div class="desc">深圳国际会展中心（宝安）15号馆 · 입장권 소지하기</div></div><a aria-label="Amap 지도" class="mapbtn" href="https://uri.amap.com/search?keyword=%E6%B7%B1%E5%9C%B3%E5%9B%BD%E9%99%85%E4%BC%9A%E5%B1%95%E4%B8%AD%E5%BF%8315%E5%8F%B7%E9%A6%86&amp;city=%E6%B7%B1%E5%9C%B3&amp;view=map&amp;src=Business-trip&amp;callnative=1" rel="noopener" target="_blank" title="Amap 지도">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M9 18 3.5 20.5A1 1 0 0 1 2 19.6V6.3a1 1 0 0 1 .6-.9L9 2l6 3 5.5-2.5A1 1 0 0 1 22 3.4v13.3a1 1 0 0 1-.6.9L15 21l-6-3Zm0-2.2 6 3V7.2l-6-3v11.6Zm8-8.9v11.2l3-1.4V5.6l-3 1.3ZM4 7v11.1l3-1.4V5.5L4 7Z"></path>
+</svg>
+</a></div><div class="transfer"><div></div><div class="move"><span class="mode">🚕 택시</span><span class="meta">COCO Park 약 50~60분 · 결제 Alipay / 현금</span></div></div><div class="row tour"><div class="time">19:00–20:00</div><div class="content"><div class="title">COCO Park</div><div class="desc">구경 · 茶颜悦色</div></div><div class="mapspacer"></div></div><div class="transfer"><div></div><div class="move"><span class="mode">🚶 도보</span><span class="meta">COCO Park 내 이동</span></div></div><div class="row food"><div class="time">20:00–22:00</div><div class="content"><div class="title">훠궈 저녁</div><div class="desc">푸톈 · 식당 추후 결정</div></div><div class="mapspacer"></div></div><div class="row other"><div class="time"></div><div class="content"><div class="title">UrCove by Hyatt Shenzhen Futian CBD</div></div><a aria-label="Amap 지도" class="mapbtn" href="https://uri.amap.com/search?keyword=%E6%B7%B1%E5%9C%B3%E7%A6%8F%E7%94%B0CBD%E9%80%B8%E6%89%89%E9%85%92%E5%BA%97&amp;city=%E6%B7%B1%E5%9C%B3&amp;view=map&amp;src=Business-trip&amp;callnative=1" rel="noopener" target="_blank" title="Amap 지도">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M9 18 3.5 20.5A1 1 0 0 1 2 19.6V6.3a1 1 0 0 1 .6-.9L9 2l6 3 5.5-2.5A1 1 0 0 1 22 3.4v13.3a1 1 0 0 1-.6.9L15 21l-6-3Zm0-2.2 6 3V7.2l-6-3v11.6Zm8-8.9v11.2l3-1.4V5.6l-3 1.3ZM4 7v11.1l3-1.4V5.5L4 7Z"></path>
+</svg>
+</a></div></div></section><section class="day" id="day4"><h2 class="daytitle">4일차 - 10/15(목)</h2><div class="schedule"><div class="row food"><div class="time">06:45–07:25</div><div class="content"><div class="title">아침 배달 (필요 시)</div><div class="desc">手抓饼·烤冷面·小吃店 &amp; 밀크티/버블티 · 美团 배달 · 약 30분</div></div><div class="mapspacer"></div></div><div class="row other"><div class="time">07:45</div><div class="content"><div class="title">UrCove 호텔 출발</div></div><a aria-label="Amap 지도" class="mapbtn" href="https://uri.amap.com/search?keyword=%E6%B7%B1%E5%9C%B3%E7%A6%8F%E7%94%B0CBD%E9%80%B8%E6%89%89%E9%85%92%E5%BA%97&amp;city=%E6%B7%B1%E5%9C%B3&amp;view=map&amp;src=Business-trip&amp;callnative=1" rel="noopener" target="_blank" title="Amap 지도">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M9 18 3.5 20.5A1 1 0 0 1 2 19.6V6.3a1 1 0 0 1 .6-.9L9 2l6 3 5.5-2.5A1 1 0 0 1 22 3.4v13.3a1 1 0 0 1-.6.9L15 21l-6-3Zm0-2.2 6 3V7.2l-6-3v11.6Zm8-8.9v11.2l3-1.4V5.6l-3 1.3ZM4 7v11.1l3-1.4V5.5L4 7Z"></path>
+</svg>
+</a></div><div class="transfer"><div></div><div class="move"><span class="mode">🚕 택시</span><span class="meta">惠州 Creality 공장 약 1시간 30분 · 결제 Alipay / 현금</span></div></div><div class="row exhibit"><div class="time">09:30–10:30</div><div class="content"><div class="title">Creality 공장 견학</div><div class="desc">惠州创想三维3D打印产业园 · 약 1시간</div></div><a aria-label="Amap 지도" class="mapbtn" href="https://uri.amap.com/search?keyword=%E6%83%A0%E5%B7%9E%E5%88%9B%E6%83%B3%E4%B8%89%E7%BB%B43D%E6%89%93%E5%8D%B0%E4%BA%A7%E4%B8%9A%E5%9B%AD&amp;city=%E6%83%A0%E5%B7%9E&amp;view=map&amp;src=Business-trip&amp;callnative=1" rel="noopener" target="_blank" title="Amap 지도">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M9 18 3.5 20.5A1 1 0 0 1 2 19.6V6.3a1 1 0 0 1 .6-.9L9 2l6 3 5.5-2.5A1 1 0 0 1 22 3.4v13.3a1 1 0 0 1-.6.9L15 21l-6-3Zm0-2.2 6 3V7.2l-6-3v11.6Zm8-8.9v11.2l3-1.4V5.6l-3 1.3ZM4 7v11.1l3-1.4V5.5L4 7Z"></path>
+</svg>
+</a></div><div class="transfer"><div></div><div class="move"><span class="mode">🚕 택시</span><span class="meta">선전 뤄후 이동 약 1시간 20~30분 · 결제 Alipay / 현금</span></div></div><div class="row food"><div class="time">12:00–13:00</div><div class="content"><div class="title">唐宫·粤菜海鲜(东门店)</div><div class="desc">唐宫金银海鲜泡饭 · 蒜蓉粉丝蒸海虾 · 金蒜蒸元贝 · 鲜虾红米肠 · 唐宫金奖乳鸽 · 虾饺皇</div><div class="tags"><span class="tag">예약 · 전화 0755-82178790</span><span class="tag">결제 · Alipay / WeChat / UnionPay / Visa / 현금</span></div></div><a aria-label="Amap 지도" class="mapbtn" href="https://www.amap.com/place/B0FFGYVAXR" rel="noopener" target="_blank" title="Amap 지도">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M9 18 3.5 20.5A1 1 0 0 1 2 19.6V6.3a1 1 0 0 1 .6-.9L9 2l6 3 5.5-2.5A1 1 0 0 1 22 3.4v13.3a1 1 0 0 1-.6.9L15 21l-6-3Zm0-2.2 6 3V7.2l-6-3v11.6Zm8-8.9v11.2l3-1.4V5.6l-3 1.3ZM4 7v11.1l3-1.4V5.5L4 7Z"></path>
+</svg>
+</a></div><div class="row tour"><div class="time">13:00–14:20</div><div class="content"><div class="title">MINISO LAND + 东门老街</div><div class="desc">MINISO LAND 东门旗舰店 · 동먼보행가 구경</div></div><a aria-label="Amap 지도" class="mapbtn" href="https://uri.amap.com/search?keyword=MINISO%20LAND%20%E4%B8%9C%E9%97%A8%E6%97%97%E8%88%B0%E5%BA%97&amp;city=%E6%B7%B1%E5%9C%B3&amp;view=map&amp;src=Business-trip&amp;callnative=1" rel="noopener" target="_blank" title="Amap 지도">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M9 18 3.5 20.5A1 1 0 0 1 2 19.6V6.3a1 1 0 0 1 .6-.9L9 2l6 3 5.5-2.5A1 1 0 0 1 22 3.4v13.3a1 1 0 0 1-.6.9L15 21l-6-3Zm0-2.2 6 3V7.2l-6-3v11.6Zm8-8.9v11.2l3-1.4V5.6l-3 1.3ZM4 7v11.1l3-1.4V5.5L4 7Z"></path>
+</svg>
+</a></div><div class="transfer"><div></div><div class="move"><span class="mode">🚇 지하철</span><span class="meta">老街 → 华强路 약 15~20분 · 결제 Alipay / 컨택리스</span></div></div><div class="row tour"><div class="time">14:40–16:40</div><div class="content"><div class="title">화창베이 전자상가</div><div class="desc">华强北电子世界 중심으로 구경</div></div><a aria-label="Amap 지도" class="mapbtn" href="https://uri.amap.com/search?keyword=%E5%8D%8E%E5%BC%BA%E5%8C%97%E7%94%B5%E5%AD%90%E4%B8%96%E7%95%8C&amp;city=%E6%B7%B1%E5%9C%B3&amp;view=map&amp;src=Business-trip&amp;callnative=1" rel="noopener" target="_blank" title="Amap 지도">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M9 18 3.5 20.5A1 1 0 0 1 2 19.6V6.3a1 1 0 0 1 .6-.9L9 2l6 3 5.5-2.5A1 1 0 0 1 22 3.4v13.3a1 1 0 0 1-.6.9L15 21l-6-3Zm0-2.2 6 3V7.2l-6-3v11.6Zm8-8.9v11.2l3-1.4V5.6l-3 1.3ZM4 7v11.1l3-1.4V5.5L4 7Z"></path>
+</svg>
+</a></div><div class="row tour"><div class="time">16:40–17:20</div><div class="content"><div class="title">Walmart 장보기</div><div class="desc">화창베이 인근</div></div><div class="mapspacer"></div></div><div class="transfer"><div></div><div class="move"><span class="mode">🚕 택시</span><span class="meta">호텔 이동 · 장 본 물건 내려놓기</span></div></div><div class="row other"><div class="time">17:30–18:00</div><div class="content"><div class="title">UrCove by Hyatt Shenzhen Futian CBD</div><div class="desc">장 본 물건 내려놓기</div></div><div class="mapspacer"></div></div><div class="transfer"><div></div><div class="move"><span class="mode">🚕 택시</span><span class="meta">COCO Park 약 5~10분 · 결제 Alipay / 현금</span></div></div><div class="row tour"><div class="time">18:10–19:00</div><div class="content"><div class="title">COCO Park</div><div class="desc">구경 · 茶颜悦色</div></div><div class="mapspacer"></div></div><div class="row food"><div class="time">19:10–21:10</div><div class="content"><div class="title">很久以前羊肉串(福田COCOPARK店)</div><div class="desc">저녁 2시간 · 원격 번호표 이용</div></div><div class="mapspacer"></div></div><div class="transfer"><div></div><div class="move"><span class="mode">🚶 도보</span><span class="meta">森SPA 약 10~15분</span></div></div><div class="row other"><div class="time">21:30–22:40</div><div class="content"><div class="title">森SPA·泰式按摩·精油Massage(购物公园店)</div><div class="desc">70분 · 6명 마사지 · 2명 숙소 복귀 또는 주변 자유시간</div></div><div class="mapspacer"></div></div><div class="transfer final-transfer"><div></div><div class="move"><span class="mode">🚕 택시</span><span class="meta">숙소 약 5~10분 · 결제 Alipay / 현금</span></div></div><div class="row other"><div class="time"></div><div class="content"><div class="title">UrCove by Hyatt Shenzhen Futian CBD</div></div><a aria-label="Amap 지도" class="mapbtn" href="https://uri.amap.com/search?keyword=%E6%B7%B1%E5%9C%B3%E7%A6%8F%E7%94%B0CBD%E9%80%B8%E6%89%89%E9%85%92%E5%BA%97&amp;city=%E6%B7%B1%E5%9C%B3&amp;view=map&amp;src=Business-trip&amp;callnative=1" rel="noopener" target="_blank" title="Amap 지도">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M9 18 3.5 20.5A1 1 0 0 1 2 19.6V6.3a1 1 0 0 1 .6-.9L9 2l6 3 5.5-2.5A1 1 0 0 1 22 3.4v13.3a1 1 0 0 1-.6.9L15 21l-6-3Zm0-2.2 6 3V7.2l-6-3v11.6Zm8-8.9v11.2l3-1.4V5.6l-3 1.3ZM4 7v11.1l3-1.4V5.5L4 7Z"></path>
+</svg>
+</a></div></div></section><section class="day" id="day5"><h2 class="daytitle">5일차 - 10/16(금)</h2><div class="schedule"><div class="row food"><div class="time">07:30–08:10</div><div class="content"><div class="title">아침 배달 (필요 시)</div><div class="desc">手抓饼·烤冷面·小吃店 &amp; 밀크티/버블티 · 美团 배달 · 약 30분</div></div><div class="mapspacer"></div></div><div class="row other"><div class="time">09:00</div><div class="content"><div class="title">UrCove 체크아웃</div></div><a aria-label="Amap 지도" class="mapbtn" href="https://uri.amap.com/search?keyword=%E6%B7%B1%E5%9C%B3%E7%A6%8F%E7%94%B0CBD%E9%80%B8%E6%89%89%E9%85%92%E5%BA%97&amp;city=%E6%B7%B1%E5%9C%B3&amp;view=map&amp;src=Business-trip&amp;callnative=1" rel="noopener" target="_blank" title="Amap 지도">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M9 18 3.5 20.5A1 1 0 0 1 2 19.6V6.3a1 1 0 0 1 .6-.9L9 2l6 3 5.5-2.5A1 1 0 0 1 22 3.4v13.3a1 1 0 0 1-.6.9L15 21l-6-3Zm0-2.2 6 3V7.2l-6-3v11.6Zm8-8.9v11.2l3-1.4V5.6l-3 1.3ZM4 7v11.1l3-1.4V5.5L4 7Z"></path>
+</svg>
+</a></div><div class="transfer"><div></div><div class="move"><span class="mode">🚕 택시</span><span class="meta">선전 바오안공항 약 35~45분 · 결제 Alipay / 현금</span></div></div><div class="row other"><div class="time">09:45 전후</div><div class="content"><div class="title">선전 바오안국제공항</div><div class="desc">KE836 체크인 · 출국수속</div></div><a aria-label="Amap 지도" class="mapbtn" href="https://uri.amap.com/search?keyword=%E6%B7%B1%E5%9C%B3%E5%AE%9D%E5%AE%89%E5%9B%BD%E9%99%85%E6%9C%BA%E5%9C%BA&amp;city=%E6%B7%B1%E5%9C%B3&amp;view=map&amp;src=Business-trip&amp;callnative=1" rel="noopener" target="_blank" title="Amap 지도">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M9 18 3.5 20.5A1 1 0 0 1 2 19.6V6.3a1 1 0 0 1 .6-.9L9 2l6 3 5.5-2.5A1 1 0 0 1 22 3.4v13.3a1 1 0 0 1-.6.9L15 21l-6-3Zm0-2.2 6 3V7.2l-6-3v11.6Zm8-8.9v11.2l3-1.4V5.6l-3 1.3ZM4 7v11.1l3-1.4V5.5L4 7Z"></path>
+</svg>
+</a></div><div class="row other"><div class="time">12:45–17:35</div><div class="content"><div class="title">대한항공 KE836 · 선전 → 인천</div><div class="desc">선전 출발 · 인천 T2 도착 · A330-300</div></div><div class="mapspacer"></div></div></div></section></main>
 <script id="fx-script">
 (() => {
   let rates = { HKD: 171.1, CNY: 200.4 };
